@@ -4,7 +4,7 @@ CREATE TABLE "users" (
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
     "email" TEXT NOT NULL,
-    "password" TEXT NOT NULL,
+    "hashedPassword" TEXT NOT NULL,
     "firstName" TEXT NOT NULL,
     "lastName" TEXT NOT NULL,
     "role" INTEGER NOT NULL,
