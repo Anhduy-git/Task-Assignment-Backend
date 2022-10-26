@@ -10,18 +10,13 @@ import { CreateTaskDto, EditTaskDto } from './dto';
 export class TaskService {
   constructor(private prisma: PrismaService) {}
 
-  getTasks(userId: number) {
-    return this.prisma.task.findMany({
-      where: {
-        userId,
-      },
-    });
+  getAllTasks() {
+    return this.prisma.task.findMany();
   }
 
-  getTaskById(userId: number, taskId: number) {
-    return this.prisma.task.findFirst({
+  getTasksOfUser(userId: number) {
+    return this.prisma.task.findMany({
       where: {
-        id: taskId,
         userId,
       },
     });

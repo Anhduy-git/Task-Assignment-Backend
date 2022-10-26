@@ -7,6 +7,7 @@ import {
   Delete,
   UseGuards,
   Param,
+  Query,
   ParseIntPipe,
   HttpCode,
   HttpStatus,
@@ -22,18 +23,15 @@ export class TaskController {
   constructor(private taskService: TaskService) {}
 
   @HttpCode(HttpStatus.OK)
-  @Get()
-  getTasks(@GetUser('id') userId: number) {
-    return this.taskService.getTasks(userId);
+  @Get('/?')
+  getTasksOfUser(@Query('userId', ParseIntPipe) userId: number) {
+    return this.taskService.getTasksOfUser(userId);
   }
 
   @HttpCode(HttpStatus.OK)
-  @Get(':id')
-  getTaskById(
-    @GetUser('id') userId: number,
-    @Param('id', ParseIntPipe) taskId: number,
-  ) {
-    return this.taskService.getTaskById(userId, taskId);
+  @Get()
+  getAllTasks() {
+    return this.taskService.getAllTasks();
   }
 
   @HttpCode(HttpStatus.CREATED)
