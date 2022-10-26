@@ -36,6 +36,7 @@ model Task {
   description String
   deadline DateTime
 	priority Int
+	isDone Boolean @default(false)
 
   userId Int
   user   User @relation(fields: [userId], references: [id])

@@ -7,8 +7,9 @@ async function bootstrap() {
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true, //only use field list in dto
+      transform: true,
     }),
   );
-  await app.listen(3000);
+  await app.listen(3008);
 }
 bootstrap();

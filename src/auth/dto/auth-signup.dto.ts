@@ -1,4 +1,11 @@
-import { IsEmail, IsInt, IsNotEmpty, IsString } from 'class-validator';
+import {
+  IsEmail,
+  IsInt,
+  IsNotEmpty,
+  IsString,
+  Max,
+  Min,
+} from 'class-validator';
 
 export class AuthSignUpDto {
   @IsEmail()
@@ -19,5 +26,7 @@ export class AuthSignUpDto {
 
   @IsInt()
   @IsNotEmpty()
+  @Min(0)
+  @Max(1)
   role: number;
 }

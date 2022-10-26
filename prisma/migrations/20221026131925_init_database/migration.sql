@@ -21,6 +21,7 @@ CREATE TABLE "tasks" (
     "description" TEXT NOT NULL,
     "deadline" TIMESTAMP(3) NOT NULL,
     "priority" INTEGER NOT NULL,
+    "isDone" BOOLEAN NOT NULL DEFAULT false,
     "userId" INTEGER NOT NULL,
 
     CONSTRAINT "tasks_pkey" PRIMARY KEY ("id")
