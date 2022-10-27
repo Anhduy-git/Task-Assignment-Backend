@@ -23,6 +23,14 @@ export class TaskService {
   }
 
   async createTask(dto: CreateTaskDto) {
+    const user = await this.prisma.user.findFirst({
+      where: {
+        id: dto.userId,
+      },
+    });
+    if (!user) {
+      throw new BadRequestException('User not found');
+    }
     const task = await this.prisma.task.create({
       data: {
         ...dto,

@@ -24,14 +24,12 @@ export class TaskController {
 
   @HttpCode(HttpStatus.OK)
   @Get('/?')
-  getTasksOfUser(@Query('userId', ParseIntPipe) userId: number) {
-    return this.taskService.getTasksOfUser(userId);
-  }
-
-  @HttpCode(HttpStatus.OK)
-  @Get()
-  getAllTasks() {
-    return this.taskService.getAllTasks();
+  getTasks(@Query('userId') userId: string) {
+    if (userId) {
+      return this.taskService.getTasksOfUser(parseInt(userId));
+    } else {
+      return this.taskService.getAllTasks();
+    }
   }
 
   @HttpCode(HttpStatus.CREATED)
@@ -39,7 +37,6 @@ export class TaskController {
   createTask(@Body() dto: CreateTaskDto) {
     return this.taskService.createTask(dto);
   }
-
   @HttpCode(HttpStatus.OK)
   @Patch(':id')
   editTask(
