@@ -25,7 +25,7 @@ Here is our team, you can connect us through our Linkedin:
 
 ## Tech Stack
 
-**Programming Language:** Typescript.
+**Programming Language:** Javascript, Typescript.
 
 **Frameworks:** NodeJS, NestJS.
 
