@@ -37,6 +37,8 @@ Here is our team, you can connect us through our Linkedin:
 
 **E2E testing:** Jest, Pactum.
 
+**DevOps:** Docker.
+
 ## Features
 - Signin/Signup user.
 - Add new admin/member.
