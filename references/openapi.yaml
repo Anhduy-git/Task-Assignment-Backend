@@ -1,10 +1,12 @@
 openapi: 3.0.0
 servers:
 
-  # Added by API Auto Mocking Plugin  
-  - url: https://ad-order-app.herokuapp.com
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/Anhduy-git/AssignmentTaskAPI/1.0.0
+  - url: 35.77.199.142:3005
     description: Production server.
-  - url: http://localhost:3008
+  - url: http://localhost:3005
     description: Development server.
 info:
   version: "1.0.0"
